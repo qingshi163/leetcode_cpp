@@ -1,11 +1,8 @@
 #ifndef INC_H_
 #define INC_H_
 
-#include <iostream>
-#include <queue>
-#include <unordered_map>
-#include <unordered_set>
-#include <vector>
+#include "stdafx.hpp"
+#include "catch.hpp"
 
 using namespace std;
 
@@ -34,7 +31,30 @@ struct ListNode {
     ListNode(int x) : val(x), next(nullptr) {}
     ListNode(int x, ListNode* next) : val(x), next(next) {}
 };
+// ostream& operator<<(ostream& os, ListNode* root);
+ostream& operator<<(ostream& os, ListNode* const& root);
 ListNode* list(const vector<int>& v);
+vector<int> list_to_vec(ListNode* root);
 bool equal(ListNode* l1, ListNode* l2);
+
+
+
+class ListNodeMatcher : public Catch::MatcherBase<ListNode*> {
+    ListNode *src;
+public:
+    ListNodeMatcher(ListNode* _src) : src(_src) {}
+    bool match(ListNode* const& t) const override {
+        return equal(t, src);
+    }
+    string describe() const override {
+        ostringstream ss;
+        ss << src;
+        return ss.str();
+    }
+};
+
+inline ListNodeMatcher Equals(ListNode* src) {
+    return ListNodeMatcher(src);
+}
 
 #endif

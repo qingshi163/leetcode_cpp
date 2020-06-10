@@ -4,8 +4,9 @@ SOURCE_DIR=src/
 OBJECTS:=$(patsubst $(SOURCE_DIR)%.cpp,%.o,$(wildcard $(SOURCE_DIR)*.cpp))
 TARGET=build/target
 CC=clang++
-PCH_H=inc.hpp
+PCH_H=stdafx.hpp
 PCH=$(BUILD_DIR)$(PCH_H).pch
+DEPEND_HEADERS:=$(PCH_H) inc.hpp
 CFLAGS=-g -Wall -std=c++17
 LIBS=
 
@@ -26,5 +27,5 @@ $(PCH) : $(PCH_H)
 $(TARGET) : $(OBJECT_FILES)
 	$(CC) -o $@ $^ $(LIBS)
 
-$(OBJECT_FILES) : $(BUILD_DIR)%.o : $(SOURCE_DIR)%.cpp $(PCH)
+$(OBJECT_FILES) : $(BUILD_DIR)%.o : $(SOURCE_DIR)%.cpp $(DEPEND_HEADERS)
 	$(CC) -c -o $@ $< -include-pch $(PCH) $(CFLAGS)
