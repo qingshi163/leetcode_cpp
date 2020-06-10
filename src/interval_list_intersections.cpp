@@ -26,7 +26,7 @@ public:
 };
 
 TEST_CASE("LC: Interval List Intersections") {
-    auto s = new LC_IntervalListIntersections;
+    auto s = make_shared<LC_IntervalListIntersections>();
     vector<vector<int>> A, B, R;
     CHECK(
         s->intervalIntersection(

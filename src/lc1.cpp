@@ -17,7 +17,7 @@ public:
 };
 
 TEST_CASE("LC1. Two Sum") {
-    auto s = new LC1;
+    auto s = make_shared<LC1>();
     vector<int> nums;
     CHECK(s->twoSum(nums={2,7,11,15}, 9) == vector<int>{0,1});
 }

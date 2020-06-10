@@ -9,7 +9,7 @@ public:
 };
 
 TEST_CASE("LC: Construct Binary Search Tree from Preorder Traversal") {
-    auto s = new LC_ConstructBinarySearchTreefromPreorderTraversal;
+    auto s = make_shared<LC_ConstructBinarySearchTreefromPreorderTraversal>();
     vector<int> preorder;
     s->bstFromPreorder(preorder={8,5,1,7,10,12});
 }

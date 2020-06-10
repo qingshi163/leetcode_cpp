@@ -34,7 +34,7 @@ public:
 };
 
 TEST_CASE("LC2. Add Two Numbers") {
-    auto s = new LC2;
+    auto s = make_shared<LC2>();
     CHECK(equal(list({1, 2, 3}), list({1, 2, 3})));
     CHECK(equal(s->addTwoNumbers(list({2, 4, 3}), list({5, 6, 4})), list({7, 0, 8})));
     CHECK(equal(s->addTwoNumbers(list({5}), list({5})), list({0,1})));

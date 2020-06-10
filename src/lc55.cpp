@@ -13,7 +13,7 @@ public:
 };
 
 TEST_CASE("LC55. Jump Game") {
-    auto s = new LC55;
+    auto s = make_shared<LC55>();
     vector<int> nums;
     CHECK(s->canJump(nums = {2, 3, 1, 1, 4}));
     CHECK_FALSE(s->canJump(nums = {3, 2, 1, 0, 4}));

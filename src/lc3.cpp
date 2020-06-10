@@ -19,7 +19,7 @@ public:
 };
 
 TEST_CASE("LC3. Longest Substring Without Repeating Characters") {
-    auto s = new LC3;
+    auto s = make_shared<LC3>();
     CHECK(s->lengthOfLongestSubstring("abcabcbb") == 3);
     CHECK(s->lengthOfLongestSubstring("bbbbb") == 1);
     CHECK(s->lengthOfLongestSubstring("pwwkew") == 3);

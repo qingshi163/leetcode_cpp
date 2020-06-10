@@ -26,7 +26,7 @@ public:
 };
 
 TEST_CASE("LC22. Generate Parentheses") {
-    auto s = new LC22;
+    auto s = make_shared<LC22>();
     CHECK_THAT(s->generateParenthesis(3), Catch::UnorderedEquals(vector<string>{
         "((()))",
         "(()())",

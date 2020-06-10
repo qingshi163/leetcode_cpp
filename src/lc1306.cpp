@@ -21,7 +21,7 @@ public:
 };
 
 TEST_CASE("LC1306. Jump Game III") {
-    auto s = new LC1306;
+    auto s = make_shared<LC1306>();
     vector<int> nums;
     CHECK(s->canReach(nums = {4, 2, 3, 0, 3, 1, 2}, 5));
     CHECK(s->canReach(nums = {4, 2, 3, 0, 3, 1, 2}, 0));

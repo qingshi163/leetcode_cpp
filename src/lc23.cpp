@@ -31,7 +31,7 @@ public:
 };
 
 TEST_CASE("LC23. Merge k Sorted Lists") {
-    auto s = new LC23;
+    auto s = make_shared<LC23>();
     vector<ListNode*> lists;
     ListNode* r = s->mergeKLists(lists={
         list({1,4,5}),

@@ -19,7 +19,7 @@ public:
 };
 
 TEST_CASE("LC59. Spiral Matrix II") {
-    LC59* s = new LC59;
+    auto s = make_shared<LC59>();
     CHECK(s->generateMatrix(3) == vector<vector<int>>({{1, 2, 3}, {8, 9, 4}, {7, 6, 5}}));
     CHECK(
         s->generateMatrix(4) ==

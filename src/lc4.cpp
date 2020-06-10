@@ -38,7 +38,7 @@ public:
 };
 
 TEST_CASE("LC4. Median of Two Sorted Arrays") {
-    auto s = new LC4;
+    auto s = make_shared<LC4>();
     vector<int> nums1, nums2;
     CHECK(s->findMedianSortedArrays(nums1={1,3}, nums2={2}) == 2.0);
     CHECK(s->findMedianSortedArrays(nums1={1,2}, nums2={3,4}) == 2.5);

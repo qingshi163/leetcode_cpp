@@ -30,7 +30,7 @@ public:
 };
 
 TEST_CASE("LC: Coin Change 2") {
-    auto s = new LC_CoinChange2;
+    auto s = make_shared<LC_CoinChange2>();
     vector<int> nums;
     CHECK(s->change(5, nums={1,2,3}) == 5);
     CHECK(s->change(10, nums={1,2,3}) == 14);
