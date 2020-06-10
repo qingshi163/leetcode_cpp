@@ -54,4 +54,16 @@ inline ListNodeMatcher Equals(ListNode* src) {
     return ListNodeMatcher(src);
 }
 
+template<typename T>
+ostream& operator<<(ostream& os, const vector<T>& v) {
+    os << '{';
+    if (!v.empty()) {
+        os << v[0];
+        for (int i = 1; i < v.size(); i++) {
+            os << ',' << v[i];
+        }
+    }
+    return os << '}';
+}
+
 #endif

@@ -8,5 +8,6 @@
 #include <vector>
 #include <string>
 #include <sstream>
+#include <numeric>
 
 #endif
