@@ -31,13 +31,10 @@ struct ListNode {
     ListNode(int x) : val(x), next(nullptr) {}
     ListNode(int x, ListNode* next) : val(x), next(next) {}
 };
-// ostream& operator<<(ostream& os, ListNode* root);
-ostream& operator<<(ostream& os, ListNode* const& root);
+ostream& operator<<(ostream& os, ListNode* root);
 ListNode* list(const vector<int>& v);
 vector<int> list_to_vec(ListNode* root);
 bool equal(ListNode* l1, ListNode* l2);
-
-
 
 class ListNodeMatcher : public Catch::MatcherBase<ListNode*> {
     ListNode *src;

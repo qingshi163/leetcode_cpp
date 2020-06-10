@@ -39,20 +39,7 @@ vector<int> tree_postorder(TreeNode* root) {
     return v;
 }
 
-// ostream& operator<<(ostream& os, ListNode* root) {
-//     os << '{';
-//     if (root) {
-//         os << root->val;
-//         root = root->next;
-//         while (root) {
-//             os << ',' << root->val;
-//             root = root->next;
-//         }
-//     }
-//     return os << '}';
-// }
-ostream& operator<<(ostream& os, ListNode* const& _root) {
-    ListNode* root = _root;
+ostream& operator<<(ostream& os, ListNode* root) {
     os << '{';
     if (root) {
         os << root->val;
