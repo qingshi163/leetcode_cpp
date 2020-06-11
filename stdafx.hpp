@@ -9,5 +9,8 @@
 #include <string>
 #include <sstream>
 #include <numeric>
+#include <climits>
+#include <cstdint>
+#include <cfloat>
 
 #endif
