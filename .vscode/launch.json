@@ -9,7 +9,7 @@
             "type": "lldb",
             "request": "launch",
             "program": "${workspaceFolder}/build/target",
-            "args": ["LC23*"],
+            "args": [""],
             "preLaunchTask": "make"
         }
     ]
