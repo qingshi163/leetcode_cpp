@@ -1,4 +1,3 @@
-#include "../catch.hpp"
 #include "../inc.hpp"
 
 class LC_ConstructBinarySearchTreefromPreorderTraversal {
