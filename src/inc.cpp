@@ -71,7 +71,7 @@ ListNode* list(const vector<int>& v) {
     return head;
 }
 
-vector<int> list_to_vec(ListNode* root) {
+vector<int> to_vec(ListNode* root) {
     vector<int> v;
     while (root) {
         v.push_back(root->val);

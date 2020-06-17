@@ -33,7 +33,7 @@ struct ListNode {
 };
 ostream& operator<<(ostream& os, ListNode* root);
 ListNode* list(const vector<int>& v);
-vector<int> list_to_vec(ListNode* root);
+vector<int> to_vec(ListNode* root);
 bool equal(ListNode* l1, ListNode* l2);
 
 class ListNodeMatcher : public Catch::MatcherBase<ListNode*> {

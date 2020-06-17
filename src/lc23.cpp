@@ -38,6 +38,5 @@ TEST_CASE("LC23. Merge k Sorted Lists") {
         list({1,3,4}),
         list({2,6})
     });
-    INFO(r);
-    CHECK_THAT(r, Equals(list({1,1,2,3,4,4,5,6})));
+    CHECK(to_vec(r) == vector<int>{1,1,2,3,4,4,5,6});
 }
