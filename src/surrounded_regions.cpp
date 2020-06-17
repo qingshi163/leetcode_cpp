@@ -11,12 +11,6 @@ public:
         for (int i = 1; i < h; i++) { workflow.push_back({i, w - 1}); }
         for (int i = 0; i < w - 1; i++) { workflow.push_back({h - 1, i}); }
         for (int i = 1; i < h - 1; i++) { workflow.push_back({i, 0}); }
-        workflow.erase(
-            remove_if(
-                workflow.begin(),
-                workflow.end(),
-                [&](auto pair) { return board[pair.first][pair.second] == 'X'; }),
-            workflow.end());
         while (!workflow.empty()) {
             for (const auto& pair : workflow) {
                 if (pair.first < 0 || pair.first >= h || pair.second < 0 || pair.second >= w)
