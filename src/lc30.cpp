@@ -55,10 +55,10 @@ public:
 TEST_CASE("LC30. Substring with Concatenation of All Words") {
     auto s = make_shared<LC30>();
     vector<string> words;
-    // CHECK(s->findSubstring("barfoothefoobarman", words = {"foo", "bar"}) == vector<int>{0, 9});
+    CHECK(s->findSubstring("barfoothefoobarman", words = {"foo", "bar"}) == vector<int>{0, 9});
     CHECK(s->findSubstring("aaabbc", words = {"a", "a", "b", "b"}) == vector<int>{1});
-    // CHECK(s->findSubstring("aaabbbc", words = {"a", "a", "b", "b", "c"}) == vector<int>{});
-    // CHECK(
-        // s->findSubstring("wordgoodgoodgoodbestword", words = {"word", "good", "best", "word"}) ==
-        // vector<int>{});
+    CHECK(s->findSubstring("aaabbbc", words = {"a", "a", "b", "b", "c"}) == vector<int>{});
+    CHECK(
+        s->findSubstring("wordgoodgoodgoodbestword", words = {"word", "good", "best", "word"}) ==
+        vector<int>{});
 }
