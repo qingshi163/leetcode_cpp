@@ -66,4 +66,18 @@ ostream& operator<<(ostream& os, const vector<T>& v) {
     return os << '}';
 }
 
+template<typename T>
+ostream& operator<<(ostream& os, queue<T> q) {
+    os << '{';
+    if (!q.empty()) {
+        os << q.front();
+        q.pop();
+        while (!q.empty()) {
+            os << ',' << q.front();
+            q.pop();
+        }
+    }
+    return os << '}';
+}
+
 #endif
