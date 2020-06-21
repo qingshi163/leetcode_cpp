@@ -66,6 +66,23 @@ ostream& operator<<(ostream& os, const vector<T>& v) {
     return os << '}';
 }
 
+template <typename T1, typename T2>
+ostream& operator<<(ostream& os, std::pair<T1,T2>& p) {
+    return os << '(' << p.first << ',' << p.second << ')';
+}
+
+template <typename T1, typename T2>
+ostream& operator<<(ostream& os, const vector<pair<T1,T2>>& v) {
+    os << '{';
+    if (!v.empty()) {
+        os << '(' << v[0].first << ',' << v[0].second << ')';
+        for (int i = 1; i < v.size(); i++) {
+            os << ",(" << v[i].first << ',' << v[i].second << ')';
+        }
+    }
+    return os << '}';
+}
+
 template<typename T>
 ostream& operator<<(ostream& os, queue<T> q) {
     os << '{';
