@@ -21,6 +21,7 @@ void _tree_postorder(vector<int>& v, TreeNode* node);
 vector<int> tree_preorder(TreeNode* root);
 vector<int> tree_inorder(TreeNode* root);
 vector<int> tree_postorder(TreeNode* root);
+TreeNode* tree(const vector<int>& v);
 bool equal(TreeNode* t1, TreeNode* t2);
 
 // Definition for singly-linked list.

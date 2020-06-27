@@ -59,6 +59,25 @@ bool equal(TreeNode* t1, TreeNode* t2) {
                          equal(t1->right, t2->right);
 }
 
+TreeNode* tree(const vector<int>& v) {
+    if (v.empty()) return nullptr;
+    TreeNode* root = new TreeNode(v.front());
+    queue<TreeNode*> q;
+    q.push(root);
+    int i = 1;
+    while (true) {
+        TreeNode* node = q.front();
+        q.pop();
+        if (i == v.size()) break;
+        node->left = new TreeNode(v[i++]);
+        q.push(node->left);
+        if (i == v.size()) break;
+        node->right = new TreeNode(v[i++]);
+        q.push(node->right);
+    }
+    return root;
+}
+
 ListNode* list(const vector<int>& v) {
     if (v.empty()) return nullptr;
     ListNode* head = new ListNode(v[0]);
