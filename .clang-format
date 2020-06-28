@@ -17,7 +17,7 @@ AllowShortLoopsOnASingleLine: true
 AllowShortIfStatementsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: false
 AllowShortCaseLabelsOnASingleLine: true
-AllowShortBlocksOnASingleLine: true
+AllowShortBlocksOnASingleLine: false
 AllowAllArgumentsOnNextLine: false
 AllowAllParametersOfDeclarationOnNextLine: true
 AlignAfterOpenBracket: AlwaysBreak
