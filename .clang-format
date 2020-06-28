@@ -15,7 +15,7 @@ BinPackParameters: false
 AlwaysBreakTemplateDeclarations: true
 AllowShortLoopsOnASingleLine: true
 AllowShortIfStatementsOnASingleLine: true
-AllowShortFunctionsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: false
 AllowShortCaseLabelsOnASingleLine: true
 AllowShortBlocksOnASingleLine: true
 AllowAllArgumentsOnNextLine: false
