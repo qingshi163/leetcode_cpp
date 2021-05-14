@@ -1,8 +1,6 @@
-# OBJECTS=main.o lc55.o lc1306.o interval_list_intersections.o
 BUILD_DIR=build/
 SOURCE_DIR=src/
-OBJECTS:=$(patsubst $(SOURCE_DIR)%.cpp,%.o,$(wildcard $(SOURCE_DIR)*.cpp))
-TARGET=build/target
+EXES:=$(patsubst $(SOURCE_DIR)%.cpp,%,$(wildcard $(SOURCE_DIR)*.cpp))
 CC=clang++
 PCH_H=stdafx.hpp
 PCH=$(BUILD_DIR)$(PCH_H).pch
@@ -10,13 +8,14 @@ DEPEND_HEADERS:=$(PCH_H) inc.hpp
 CFLAGS=-g -Wall -std=c++17
 LIBS=
 
-OBJECT_FILES:=$(addprefix $(BUILD_DIR), $(OBJECTS))
+EXE_FILES:=$(addprefix $(BUILD_DIR), $(EXES))
 
-all: $(BUILD_DIR) $(PCH) $(OBJECT_FILES) $(TARGET)
-run: | $(BUILD_DIR) $(TARGET)
-	./$(TARGET)
+all: $(EXE_FILES)
+
+run: $(EXES)
+
 clean:
-	-rm -r -f $(PCH) $(OBJECT_FILES) $(TARGET) $(BUILD_DIR)
+	-rm -r -f $(PCH) $(EXE_FILES) $(BUILD_DIR)
 
 $(BUILD_DIR):
 	mkdir -p $@
@@ -24,8 +23,8 @@ $(BUILD_DIR):
 $(PCH) : $(PCH_H)
 	$(CC) -o $@ $^ $(CFLAGS)
 
-$(TARGET) : $(OBJECT_FILES)
-	$(CC) -o $@ $^ $(LIBS)
+$(EXES) : % : $(BUILD_DIR)%
+	./$^
 
-$(OBJECT_FILES) : $(BUILD_DIR)%.o : $(SOURCE_DIR)%.cpp $(DEPEND_HEADERS)
-	$(CC) -c -o $@ $< -include-pch $(PCH) $(CFLAGS)
+$(EXE_FILES) : $(BUILD_DIR)% : $(SOURCE_DIR)%.cpp $(DEPEND_HEADERS) | $(BUILD_DIR) $(PCH)
+	$(CC) -o $@ $< -include-pch $(PCH) $(CFLAGS) $(LIBS)

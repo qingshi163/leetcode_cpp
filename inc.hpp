@@ -2,6 +2,7 @@
 #define INC_H_
 
 #include "stdafx.hpp"
+#define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 
 using namespace std;

@@ -5,7 +5,7 @@ struct Node {
     int val;
     Node* prev;
     Node* next;
-    Node() : key(-1), val(-1), prev(nullptr), next(nullptr) {}
+    Node() : key(0), val(0), prev(nullptr), next(nullptr) {}
 };
 
 class LC_LRUCache {
