@@ -2,8 +2,6 @@
 #define INC_H_
 
 #include "stdafx.hpp"
-#define CATCH_CONFIG_MAIN
-#include "catch.hpp"
 
 using namespace std;
 
@@ -38,7 +36,7 @@ ListNode* list(const vector<int>& v);
 vector<int> to_vec(ListNode* root);
 bool equal(ListNode* l1, ListNode* l2);
 
-class ListNodeMatcher : public Catch::MatcherBase<ListNode*> {
+class ListNodeMatcher : public Catch::Matchers::MatcherBase<ListNode*> {
     ListNode *src;
 public:
     ListNodeMatcher(ListNode* _src) : src(_src) {}

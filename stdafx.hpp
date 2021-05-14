@@ -13,5 +13,6 @@
 #include <climits>
 #include <cstdint>
 #include <cfloat>
+#include <catch2/catch_all.hpp>
 
 #endif

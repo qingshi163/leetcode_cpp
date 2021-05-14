@@ -6,7 +6,7 @@ PCH_H=stdafx.hpp
 PCH=$(BUILD_DIR)$(PCH_H).pch
 DEPEND_HEADERS:=$(PCH_H) inc.hpp
 CFLAGS=-g -Wall -std=c++17
-LIBS=
+LIBS=-lCatch2Main -lCatch2
 
 EXE_FILES:=$(addprefix $(BUILD_DIR), $(EXES))
 
